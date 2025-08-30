@@ -1,0 +1,27 @@
+# Fraud Detection System Configuration
+data:
+  synthetic_samples: 25000
+  fraud_ratio: 0.05
+  output_file: "data\\raw\\synthetic_donations.csv"
+  
+model:
+  algorithm: "isolation_forest"
+  test_size: 0.2
+  random_state: 42
+  
+features:
+  categorical: ["device_type", "is_donor_anonymous"]
+  numerical: ["amount", "donation_frequency_from_ip", "geo_distance_from_campaign", "campaign_age", "sentiment_score"]
+  
+app:
+  host: "127.0.0.1"
+  port: 8000
+  frontend_port: 8501
+
+paths:
+  preprocessor: "models\\saved_models\\preprocessor.joblib"
+  model: "models\\saved_models\\fraud_detection_model.joblib"
+
+logging:
+  level: "INFO"
+  file: "logs\\app.log"
