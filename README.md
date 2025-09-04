@@ -90,8 +90,7 @@ pip package manager
 
 Step 1: Clone and Setup
 bash
-# Navigate to project directory
-cd "D:\Study\Data Science AND ML\ML projects\Fraud Detection in Charitable Donations"
+
 
 # Install required packages
 pip install -r requirements.txt
